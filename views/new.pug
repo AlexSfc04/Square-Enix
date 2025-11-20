@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1 New character
+
+  form(action="/new" method="post")
+    div
+      label(for="id") ID:
+      input(type="number" name="id" id="id" required)
+    div
+      label(for="name") Name:
+      input(type="text" name="name" id="name" required)
+    div
+      label(for="job") Job:
+      input(type="text" name="job" id="job" required)
+    div
+      label(for="weapon") Weapon:
+      input(type="text" name="weapon" id="weapon" required)
+    div
+      label(for="level") Level:
+      input(type="number" name="level" id="level" min="1" max="99" required)
+    div
+      button(type="submit") Save
+
+  p
+    a(href="/list") Back

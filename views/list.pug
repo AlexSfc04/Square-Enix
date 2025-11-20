@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1 Character list
+
+  p
+    a(href="/new") New character
+
+  if characters.length === 0
+    p There are no characters
+  else
+    ul
+      each character in characters
+        li #{character.name} (#{character.job}) – Level #{character.level}
