@@ -119,6 +119,15 @@ app.delete('/characters/:id', (req, res) => {
   res.status(204).send();
 });
 
+  app.post('/reset', (req, res) => {
+  characters = [
+    { id: 1, name: 'Cloud Strife', job: 'Soldier', weapon: 'Buster sword', level: 25 },
+    { id: 2, name: 'Tifa Lockhart', job: 'Fighter', weapon: 'Leather gloves', level: 22 },
+    { id: 3, name: 'Aerith Gainsborough', job: 'Mage', weapon: 'Magic staff', level: 20 }
+  ];
+  res.json({ message: 'Reset done' });
+});
+
 /* =======================
    VISTAS PUG
    ======================= */
@@ -153,6 +162,9 @@ app.post('/new', (req, res) => {
     weapon,
     level: Number(level)
   });
+
+
+
 
   res.redirect('/list');
 });
